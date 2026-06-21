@@ -10,6 +10,10 @@ import java.util.Locale;
 
 public class DateUtils {
     private static final List<DateTimeFormatter> FORMATTERS = List.of(
+            new DateTimeFormatterBuilder()
+                    .appendPattern("yyyy-MM-dd HH:mm:ss")
+                    .appendFraction(ChronoField.NANO_OF_SECOND, 0, 9, true)
+                    .toFormatter(Locale.ENGLISH),
             DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:a", Locale.ENGLISH),
             DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.S", Locale.ENGLISH),
             DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss", Locale.ENGLISH),

@@ -40,7 +40,8 @@ public class TransactionService {
     public MonnifyBaseResponse<TransactionResponse> initializeTransaction(TransactionRequest transactionRequest){
         ValidationUtil.validate(transactionRequest);
         TypeToken<MonnifyBaseResponse<TransactionResponse>> typeToken =
-                new TypeToken<MonnifyBaseResponse<TransactionResponse>>() {};
+                new TypeToken<>() {
+                };
 
         return monnifyClient.post(
                 "/api/v1/merchant/transactions/init-transaction",

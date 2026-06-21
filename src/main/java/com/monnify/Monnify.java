@@ -9,6 +9,7 @@ import java.util.Objects;
 /**
  * Monnify SDK Wrapper for handling authentication and API configuration.
  * This class is designed to be initialized once with API credentials and provides access to the API key, secret key, and base URL.
+ *
  * @author Oreoluwa Somuyiwa
  * @version 1.1.0
  */
@@ -40,6 +41,10 @@ public final class Monnify {
         BASE_URL = API_KEY.startsWith("MK_PROD") ? "https://api.monnify.com" : "https://sandbox.monnify.com";
 
         initialized = true;
+    }
+
+    public static boolean isInitialize() {
+        return initialized;
     }
 
     private static String checkAPIKey(String apiKey) {

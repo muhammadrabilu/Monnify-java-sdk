@@ -1,11 +1,12 @@
 package com.monnify.utils;
 
 import com.monnify.exceptions.MonnifyValidationException;
+import jakarta.validation.ValidatorFactory;
+import jakarta.validation.ConstraintViolation;
+import jakarta.validation.Validation;
+import jakarta.validation.Validator;
 
-import javax.validation.Validation;
-import javax.validation.Validator;
-import javax.validation.ValidatorFactory;
-import javax.validation.ConstraintViolation;
+
 import java.util.Set;
 
 public class ValidationUtil {
